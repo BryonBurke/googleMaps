@@ -3,9 +3,10 @@ import $ from 'jquery';
 import 'bootstrap';
 import './css/bootstrap.min.css';
 import './css/styles.css';
+// import './js/tester.js'
 
 // MAIN LOGIC
-// import { User } from './js/user.js';
+import { Logic } from './js/logic.js';
 
 // Images
 // import earth from './img/earth.png';
@@ -23,9 +24,14 @@ import './css/styles.css';
 // USER INTERFACE
 $(document).ready(function(){
 
+  const start = async () => {
+    const buttons = await logic.getSpellButtons();
+    $('body').append(buttons);
+  }
 
+  let logic = new Logic();
+  start();
+  // process.env.API_KEY
 
-
-  
 
 });
