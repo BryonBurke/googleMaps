@@ -1,0 +1,48 @@
+body {
+  text-align: center;
+  background-color: #848b96;
+}
+
+p {
+  text-align: left;
+}
+
+.spell-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 7px;
+  grid-row-gap: 7px;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.header {
+  margin: 30px;
+  background-image: url("./../img/Natural-Parchmnet-Card.jpg");
+  border: 10px solid black;
+}
+
+.modal-content {
+  background-image: url("./../img/Natural-Parchmnet-Card.jpg");
+  border: 10px solid black;
+}
+
+@media (min-width: 430px) {
+  .spell-buttons {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 600px) {
+  .spell-buttons {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1050px) {
+  .spell-buttons {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}

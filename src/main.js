@@ -26,16 +26,22 @@ $(document).ready(function(){
 
   const start = async () => {
     const buttons = await logic.getSpellButtons();
-    $('body').append(buttons);
-  }
+    $('.spell-buttons').append(buttons);
+  };
 
   let logic = new Logic();
   start();
 
-  $('body').on('click', 'button', (event) => {
+  $('body').on('click', 'button', async (event) => {
     const spellId = event.target.id;
-    logic.getSpellCard(spellId);
+    const spellCard = await logic.getSpellCard(spellId);
+    $('#spell-content').text('');
+    $('#spell-content').append(spellCard);
+    $('.spell-modal').modal('show');
   });
 
+  $('.modal-content').click(() => {
+    $('.spell-modal').modal('hide');
+  });
 
 });

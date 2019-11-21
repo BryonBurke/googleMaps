@@ -10,16 +10,14 @@ export class Logic {
   async getSpellButtons() {
     const allSpellsObj = await this.apiTool.getSpells('');
     const spellsArray = allSpellsObj.results;
-    console.log(spellsArray);
     const spellButtons = spellsArray.map(spell => this.templateTool.makeButton(spell));
     return  spellButtons.join('');
   }
 
   async getSpellCard(index) {
     const spellObj = await this.apiTool.getSpells(index);
-    console.log(spellObj);
-    // const spellCardHtml = this.templateTool.makeSpellCard(spellObj);
-    // return spellCardHtml;
+    const spellCardHtml = this.templateTool.makeSpellCard(spellObj);
+    return spellCardHtml;
   }
 
 }
