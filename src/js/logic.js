@@ -7,17 +7,18 @@ export class Logic {
     this.templateTool = new TemplateTool();
   }
 
-  async getSpellButtons() {
-    const allSpellsObj = await this.apiTool.getSpells('');
-    const spellsArray = allSpellsObj.results;
-    const spellButtons = spellsArray.map(spell => this.templateTool.makeButton(spell));
-    return  spellButtons.join('');
+  async getButtons(type) {
+    const dataObj = await this.apiTool.getData(type, '');
+    const dataArray = dataObj.results;
+    this.apiTool[type] = dataArray;
+    const dataButtons = dataArray.map(item => this.templateTool.makeButton(item, type));
+    return  dataButtons.join('');
   }
 
-  async getSpellCard(index) {
-    const spellObj = await this.apiTool.getSpells(index);
-    const spellCardHtml = this.templateTool.makeSpellCard(spellObj);
-    return spellCardHtml;
+  async getCard(type, index) {
+    const dataObj = await this.apiTool.getData(type, index);
+    const dataCardHtml = this.templateTool[`${type}MakeCard`](dataObj);
+    return dataCardHtml;
   }
 
 }

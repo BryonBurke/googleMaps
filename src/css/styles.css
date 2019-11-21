@@ -7,11 +7,15 @@ p {
   text-align: left;
 }
 
-.spell-buttons {
+.buttons {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 7px;
   grid-row-gap: 7px;
+}
+
+.wrap {
+  display: none;
 }
 
 .modal-content {
@@ -30,19 +34,19 @@ p {
 }
 
 @media (min-width: 430px) {
-  .spell-buttons {
+  .buttons {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 @media (min-width: 600px) {
-  .spell-buttons {
+  .buttons {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
 @media (min-width: 1050px) {
-  .spell-buttons {
+  .buttons {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }

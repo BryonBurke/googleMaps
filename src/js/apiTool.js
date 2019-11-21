@@ -1,17 +1,19 @@
 export class ApiTool {
   constructor() {
-    this.memo = {};
+    this.spellsMemo = {};
+    this.monstersMemo = {};
     this.spells = [];
+    this.monsters = [];
   }
 
   // http://dnd5eapi.co/api/spells/
-  async getSpells(indexString) {
-    if (this.memo[indexString]) {
-      return this.memo[indexString];
+  async getData(data, indexString) {
+    if (this[`${data}Memo`][indexString]) {
+      return this[`${data}Memo`][indexString];
     } else {
-      const spellsObj = new Promise((resolve,reject) => {
+      const dataObj = new Promise((resolve,reject) => {
         const request = new XMLHttpRequest();
-        const url = `http://dnd5eapi.co/api/spells/${indexString}`;
+        const url = `http://dnd5eapi.co/api/${data}/${indexString}`;
         request.onload = function() {
           if (this.status === 200) {
             const responseObj = JSON.parse(request.response);
@@ -24,9 +26,9 @@ export class ApiTool {
         request.send();
       });
       if (indexString) {
-        this.memo[indexString] = await spellsObj;
+        this[`${data}Memo`][indexString] = await dataObj;
       }
-      return spellsObj;
+      return dataObj;
     }
   }
 

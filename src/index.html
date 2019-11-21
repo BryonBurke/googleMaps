@@ -4,25 +4,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="utf-8">
     <title></title>
-
   </head>
   <body>
-    <div class="jumbotron header">
-      <h1>Spells!</h1>
+    <div class="jumbotron header" value="spell">
+      <h1 value="spell">Spells!</h1>
     </div>
-    <div class="spell-buttons">
-
+    <div class="spell-wrap wrap">
+      <div class="spell-buttons buttons"></div>
     </div>
-    <div class="spell-modal modal fade" tabindex="-1" role="dialog" aria-labelledby="noNameAlertModal" aria-hidden="true">
+    <div class="jumbotron header" value="monster">
+      <h1 value="monster">Monsters!</h1>
+    </div>
+    <div class="monster-wrap wrap">
+      <div class="monster-buttons buttons"></div>
+    </div>
+    <div class="spells-modal modal fade" tabindex="-1" role="dialog" aria-labelledby="noNameAlertModal" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <div id="spell-content">
-
-
-          </div>
+          <div id="spells-content"></div>
         </div>
       </div>
     </div>
-
+    <div class="monsters-modal modal fade" tabindex="-1" role="dialog" aria-labelledby="noNameAlertModal" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div id="monsters-content"></div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

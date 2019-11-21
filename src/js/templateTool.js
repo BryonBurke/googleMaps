@@ -1,5 +1,5 @@
 export class TemplateTool {
-  conurluctor() {
+  constructor() {
 
   }
 
@@ -16,14 +16,14 @@ export class TemplateTool {
     }
   }
 
-  makeButton(spellObj){
-    const name = spellObj.name;
-    const url = spellObj.url;
+  makeButton(dataObj, data){
+    const name = dataObj.name;
+    const url = dataObj.url;
     const id = this.getIndexFromUrl(url);
-    return `<button class="btn btn-dark" type="button" id="${id}">${name}</button>`;
+    return `<button class="btn btn-dark" type="button" id="${id}" value="${data}">${name}</button>`;
   }
 
-  makeSpellCard(spellDetails){
+  spellsMakeCard(spellDetails){
     const name = spellDetails.name;
     let desc = spellDetails.desc[0];
     let subDesc;
@@ -42,6 +42,17 @@ export class TemplateTool {
       <h5>Range: ${range}</h5>
       <h5>Duration: ${duration}</h5>
       <h5>Level: ${level}</h5>
+    `;
+  }
+
+  monstersMakeCard(monsterDetails){
+    const name = monsterDetails.name;
+    const type = monsterDetails.type;
+    const hp = monsterDetails.hit_points;
+    return `
+      <h2>${name}</h2>
+      <h5>Type: ${type}</h5>
+      <h5>Hit Points: ${hp}</h5>
     `;
   }
 
