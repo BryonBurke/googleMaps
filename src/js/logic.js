@@ -15,10 +15,11 @@ export class Logic {
     return  spellButtons.join('');
   }
 
-  // async getSpellCard(index) {
-  //   const spellObj = await this.apiTool.getSpells(index);
-  //   const spellCardHtml = this.templateTool.makeSpellCard(spellObj);
-  //   return spellCardHtml;
-  // }
+  async getSpellCard(index) {
+    const spellObj = await this.apiTool.getSpells(index);
+    console.log(spellObj);
+    // const spellCardHtml = this.templateTool.makeSpellCard(spellObj);
+    // return spellCardHtml;
+  }
 
 }

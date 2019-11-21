@@ -31,7 +31,11 @@ $(document).ready(function(){
 
   let logic = new Logic();
   start();
-  // process.env.API_KEY
+
+  $('body').on('click', 'button', (event) => {
+    const spellId = event.target.id;
+    logic.getSpellCard(spellId);
+  });
 
 
 });
